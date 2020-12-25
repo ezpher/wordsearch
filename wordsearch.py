@@ -44,8 +44,11 @@ def construct_words(words, grid):
     for i in range(0, len(words)):
         construct_word(words[i], grid)
 
+    grid = [[letter if letter != '_' else random.choice(string.ascii_uppercase) for letter in row] for row in grid]
+    return grid
+
 # main
-construct_words(words, grid)
+grid = construct_words(words, grid)
 print_grid(grid)
 
 
